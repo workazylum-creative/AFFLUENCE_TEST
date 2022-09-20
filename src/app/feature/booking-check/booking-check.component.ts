@@ -2,10 +2,10 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-
-import { BookingService, BookingVerify } from "src/app/core/services/booking.service";
-
 import * as moment from "moment";
+
+import { BookingService } from "src/app/core/services/booking.service";
+import { BookingVerify } from "src/typings/booking";
 
 @Component({
   selector: "app-booking-check",

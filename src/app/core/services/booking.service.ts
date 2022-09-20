@@ -1,10 +1,7 @@
 import { Injectable } from "@angular/core";
 
-import { ApiService } from "./api.service";
-
-export type BookingVerify = {
-  available: boolean;
-};
+import { BookingVerify } from "src/typings/booking";
+import { ApiService } from "src/app/core/services/api.service";
 
 @Injectable({
   providedIn: "root",
