@@ -1,28 +1,33 @@
-<p>Please select a date and an hour to check if the resource is available</p>
+<div class="page-wrapper">
+  <p class="has-text-centered mb-6">Please select a date and an hour to check if the resource is available</p>
 
-<form
-  [formGroup]="checkForm"
-  (ngSubmit)="submit()"
-  class="is-flex is-align-items-center is-justify-content-center mb-6"
->
-  <div class="field mb-0">
-    <div class="control is-large is-rounded is-white is-lightening">
-      <input class="input is-large is-rounded is-white" type="date" name="date" formControlName="date" />
-
-      <select class="select is-large is-rounded is-white" name="time" formControlName="time">
-        <option [ngValue]="null" disabled>Select time</option>
-        <option *ngFor="let time of times" [ngValue]="time">{{ time }}</option>
-      </select>
-
-      <div class="notification" [ngClass]="{ show: submitState === 'error' }">Sorry.</div>
+  <form [formGroup]="checkForm" (ngSubmit)="submit()" class="has-text-centered mb-5">
+    <div class="columns field mb-4">
+      <div class="column control">
+        <input
+          class="input is-medium is-rounded is-white"
+          type="date"
+          name="date"
+          formControlName="date"
+          [ngClass]="{ filled: checkForm.value.date }"
+        />
+      </div>
+      <div class="column control">
+        <div class="select is-medium is-rounded is-white has-box-shadow p-0 full-width">
+          <select class="full-width" name="time" formControlName="time" [ngClass]="{ filled: checkForm.value.time }">
+            <option value="" disabled>Select time</option>
+            <option *ngFor="let time of times" [ngValue]="time">{{ time }}</option>
+          </select>
+        </div>
+      </div>
     </div>
-  </div>
-  <button
-    type="submit"
-    class="button is-primary is-medium is-circle"
-    [ngClass]="{ 'is-loading': isSubmitted, 'is-lightening': checkForm.valid }"
-    [disabled]="!checkForm.valid"
-  >
-    <i class="fas fa-arrow-right"></i>
-  </button>
-</form>
+    <button
+      type="submit"
+      class="button is-primary is-medium is-rounded"
+      [ngClass]="{ 'is-loading': isSubmitted, 'is-lightening': checkForm.valid }"
+      [disabled]="!checkForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

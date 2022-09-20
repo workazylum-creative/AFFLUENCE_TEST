@@ -1,1 +1,81 @@
-<p>booking-confirm works!</p>
+<div class="page-wrapper">
+  <p class="mb-6">
+    <a class="button is-dark is-rounded" routerLink="check">Back</a>
+  </p>
+
+  <p class="has-text-centered mb-6">Selected timeslot: {{ date }}</p>
+
+  <form [formGroup]="confirmForm" (ngSubmit)="submit()" class="has-text-centered mb-5">
+    <div class="columns field mb-4">
+      <div class="column control">
+        <input
+          class="input is-medium is-rounded is-white"
+          type="text"
+          name="firstname"
+          formControlName="firstname"
+          placeholder="first name"
+          [ngClass]="{ filled: confirmForm.value.firstname }"
+        />
+      </div>
+      <div class="column control">
+        <input
+          class="input is-medium is-rounded is-white"
+          type="text"
+          name="lastname"
+          formControlName="lastname"
+          placeholder="last name"
+          [ngClass]="{ filled: confirmForm.value.lastname }"
+        />
+      </div>
+    </div>
+    <div class="columns field mb-4">
+      <div class="column control">
+        <input
+          class="input is-medium is-rounded is-white"
+          type="email"
+          name="email"
+          formControlName="email"
+          placeholder="email"
+          [ngClass]="{ filled: confirmForm.value.email }"
+        />
+      </div>
+      <div class="column control">
+        <input
+          class="input is-medium is-rounded is-white"
+          type="tel"
+          name="phone"
+          formControlName="phone"
+          placeholder="phone"
+          [ngClass]="{ filled: confirmForm.value.phone }"
+        />
+      </div>
+    </div>
+
+    <div class="columns is-justify-content-center field mb-4 has-text-left">
+      <div class="column is-half">
+        <div class="field">
+          <label class="checkbox is-primary">
+            <input type="checkbox" formControlName="accept" />
+            I accept terms and conditions
+          </label>
+        </div>
+
+        <div class="field">
+          <label class="checkbox is-primary">
+            <input type="checkbox" formControlName="save" />
+            Save my account
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="button is-primary is-medium is-rounded"
+      [ngClass]="{ 'is-loading': isSubmitted, 'is-lightening': confirmForm.valid }"
+      [disabled]="!confirmForm.valid"
+    >
+      Book
+    </button>
+  </form>
+</div>

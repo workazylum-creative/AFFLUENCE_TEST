@@ -1,0 +1,41 @@
+body {
+  background-color: #EFEFEF;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.has-box-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+}
+
+.has-text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+}
+
+.is-lightening {
+  &.is-primary {
+    box-shadow: 0 0 10px hsl(171, 100%, 41%);
+  }
+  &.is-white {
+    box-shadow: 0 0 10px white;
+  }
+  &.is-dark {
+    box-shadow: 0 0 10px hsl(0, 0%, 21%);
+  }
+}
+
+.is-rounded {
+  border-radius: 9999px;
+}
+
+input,
+select {
+  &.filled.ng-valid {
+    border: 1px solid hsl(171, 100%, 41%) !important;
+  }
+  &.ng-touched.ng-invalid {
+    border: 1px solid hsl(0, 100%, 65%) !important;
+  }
+}

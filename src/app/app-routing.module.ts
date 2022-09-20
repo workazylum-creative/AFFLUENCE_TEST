@@ -1,24 +1,24 @@
 import { BookingConfirmComponent } from "./feature/booking-confirm/booking-confirm.component";
 import { BookingCheckComponent } from "./feature/booking-check/booking-check.component";
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: "booking-check",
+    path: "check",
     canActivate: [],
     component: BookingCheckComponent,
   },
   {
-    path: "booking-confirm",
+    path: "confirm/:datetime",
     canActivate: [],
     component: BookingConfirmComponent,
   },
-  { path: "**", redirectTo: "booking-check" },
+  { path: "**", redirectTo: "check" },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

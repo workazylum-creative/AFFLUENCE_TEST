@@ -1,0 +1,29 @@
+.input {
+  box-shadow: none;
+}
+
+.button.is-large .icon.is-small {
+  font-size: 1rem;
+}
+
+a.button.icon,
+button.icon {
+  border: none;
+}
+
+.toast-container {
+  &.toast-bottom-right {
+    right: 3rem;
+    bottom: 3rem;
+  }
+
+  .ngx-toastr {
+    &.toast-error {
+      background-color: hsl(0, 100%, 65%) !important;
+    }
+    &.toast-success {
+      background-color: hsl(171, 100%, 41%) !important;
+    }
+    border-radius: 9999px;
+  }
+}
