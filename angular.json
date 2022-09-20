@@ -32,7 +32,10 @@
               "node_modules/ngx-toastr/toastr.css",
               "src/assets/scss/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "moment"
+            ]
           },
           "configurations": {
             "production": {
