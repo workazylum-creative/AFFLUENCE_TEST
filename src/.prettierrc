@@ -1,0 +1,49 @@
+{
+  "printWidth": 120,
+  "singleQuote": false,
+  "doubleQuote": true,
+  "bracketSpacing": true,
+  "trailingComma": "all",
+  "breakBeforeElse": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrayExpand": true,
+  "arrowParens": "always",
+  "parser": "typescript",
+  "overrides": [
+    {
+      "files": [".babelrc", ".eslintrc", ".prettierrc", "*.json"],
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "options": {
+        "tabWidth": 2,
+        "parser": "angular"
+      }
+    },
+    {
+      "files": ["*.xml"],
+      "options": {
+        "tabWidth": 2,
+        "parser": "html"
+      }
+    },
+    {
+      "files": ["*.scss", "*.css"],
+      "options": {
+        "tabWidth": 2,
+        "parser": "scss"
+      }
+    },
+    {
+      "files": ["*.md"],
+      "options": {
+        "tabWidth": 2,
+        "parser": "markdown"
+      }
+    }
+  ]
+}
